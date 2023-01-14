@@ -113,17 +113,17 @@ class binarySearchTreeNode:
     def deleteValue(self, value):
         if value < self.data: # visits left subtree
             if self.left:
-                self.left.deleteValue(value)
+                self.left = self.left.deleteValue(value)
         elif value > self.data: # visits right subtree
             if self.right:
-                self.right.deleteValue(value)
+                self.right = self.right.deleteValue(value)
         else:
             if self.left is None and self.right is None: # checks if leaf nodes
                 return None
-            elif self.left is None: # returns the only child node
+            if self.left is None: # returns the only child node
                 return self.right
-            elif self.right is None: # returns the right child node
-                return self.right
+            if self.right is None: # returns the right child node
+                return self.left
 
             minValue = self.right.findMinValue() # finds the min value from the right node
             self.data = minValue # copy the min value
@@ -161,10 +161,18 @@ if __name__ == '__main__':
 
     # print(f"\nFruits In Order Traversal: {fruitsTree.inOrderTraversal()}\n")
 
-    print(f"\nNumbers: {numbers}")
-    print(f"Minimum Value: {numbersTree.findMinValue()}")
-    print(f"Maximum Value: {numbersTree.findMaxValue()}")
-    print(f"Summation of Values: {numbersTree.sumValue()}")
-    print(f"Numbers In Order Traversal: {numbersTree.inOrderTraversal()}")
-    print(f"Numbers Pre Order Traversal: {numbersTree.preOrderTraversal()}")
-    print(f"Numbers Post Order Traversal: {numbersTree.postOrderTraversal()}\n")
+    # print(f"\nBuilding tree with these elements: {numbers}")
+    # print(f"Minimum Value: {numbersTree.findMinValue()}")
+    # print(f"Maximum Value: {numbersTree.findMaxValue()}")
+    # print(f"Summation of Values: {numbersTree.sumValue()}")
+
+    # # three traversal techniques
+    # print(f"Numbers In Order Traversal: {numbersTree.inOrderTraversal()}")
+    # print(f"Numbers Pre Order Traversal: {numbersTree.preOrderTraversal()}")
+    # print(f"Numbers Post Order Traversal: {numbersTree.postOrderTraversal()}\n")
+
+    # deleting node
+    numbersTree.deleteValue(20)
+    print(f"\nAfter Deleting (In order): {numbersTree.inOrderTraversal()}")
+    print(f"After Deleting (Pre order): {numbersTree.preOrderTraversal()}")
+    print(f"After Deleting (Post order): {numbersTree.postOrderTraversal()}\n")
