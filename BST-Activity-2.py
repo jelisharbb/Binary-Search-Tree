@@ -156,3 +156,9 @@ if __name__ == '__main__':
     print("\nIs the letter on the list?", fullNameTree.search("C"))
     print("Is the letter on the list?", fullNameTree.search("J"))
     print("Is the letter on the list?", fullNameTree.search("B"))
+
+    # deletes a letter
+    fullNameTree.deleteValue("S")
+    print(f"\nAfter Deleting (In order): {fullNameTree.inOrderTraversal()}")
+    print(f"After Deleting (Pre order): {fullNameTree.preOrderTraversal()}")
+    print(f"After Deleting (Post order): {fullNameTree.postOrderTraversal()}\n")
