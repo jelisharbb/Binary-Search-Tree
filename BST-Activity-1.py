@@ -92,16 +92,16 @@ class binarySearchTreeNode:
                 return False
 
     # function that finds the leftmost (min) node in the tree
-    def minValue(self):
+    def findMinValue(self):
         if self.left is None:
             return self.data # returns the root node if the left subtree is empty
-        return self.left.minValue()
+        return self.left.findMinValue()
 
     # function that finds the rightmost (max) node in the tree
-    def maxValue(self):
+    def findMaxValue(self):
         if self.right is None:
             return self.data # returns the root node if the right subtree is empty
-        return self.right.maxValue()
+        return self.right.findMaxValue()
 
     # function that calculates the sum of all values in the tree
     def sumValue(self):
@@ -117,6 +117,19 @@ class binarySearchTreeNode:
         elif value > self.data: # visits right subtree
             if self.right:
                 self.right.deleteValue(value)
+        else:
+            if self.left is None and self.right is None: # checks if leaf nodes
+                return None
+            elif self.left is None: # returns the only child node
+                return self.right
+            elif self.right is None: # returns the right child node
+                return self.right
+
+            minValue = self.right.findMinValue() # finds the min value from the right node
+            self.data = minValue # copy the min value
+            self.right = self.right.deleteValue(minValue) # then remove the duplicate bode
+        
+        return self
 
 # function that will create the binary tree
 def buildTree(elements):
@@ -149,8 +162,8 @@ if __name__ == '__main__':
     # print(f"\nFruits In Order Traversal: {fruitsTree.inOrderTraversal()}\n")
 
     print(f"\nNumbers: {numbers}")
-    print(f"Minimum Value: {numbersTree.minValue()}")
-    print(f"Maximum Value: {numbersTree.maxValue()}")
+    print(f"Minimum Value: {numbersTree.findMinValue()}")
+    print(f"Maximum Value: {numbersTree.findMaxValue()}")
     print(f"Summation of Values: {numbersTree.sumValue()}")
     print(f"Numbers In Order Traversal: {numbersTree.inOrderTraversal()}")
     print(f"Numbers Pre Order Traversal: {numbersTree.preOrderTraversal()}")
