@@ -40,6 +40,11 @@ class binarySearchTreeNode:
 
         return elements
 
+    def search(self, value):
+        # returns the root node
+        if value == self.data:
+            return
+
 # function that will create the binary tree
 def buildTree(elements):
     # first element in the set will be the root node
@@ -54,4 +59,4 @@ def buildTree(elements):
 if __name__ == '__main__':
     numbers = [15, 3, 9, 20, 12, 24, 27, 1]
     numbersTree = buildTree(numbers)
-    print(numbersTree.inOrderTraversal())
+    print(f"\nNumbers In Order Traversal: {numbersTree.inOrderTraversal()}\n")
