@@ -59,11 +59,17 @@ class binarySearchTreeNode:
             else:
                 return False
 
-    # function that finds the leftmost node in the tree
+    # function that finds the leftmost (min) node in the tree
     def minValue(self):
         if self.left is None:
-            return self.data
+            return self.data # returns the root node if the left subtree is empty
         return self.left.minValue()
+
+    # function that finds the rightmost (max) node in the tree
+    def maxValue(self):
+        if self.right is None:
+            return self.data # returns the root node if the right subtree is empty
+        return self.right.maxValue()
 
 # function that will create the binary tree
 def buildTree(elements):
@@ -94,3 +100,4 @@ if __name__ == '__main__':
     # print(f"\nFruits In Order Traversal: {fruitsTree.inOrderTraversal()}\n")
 
     print(f"\nMinimum Value: {numbersTree.minValue()}")
+    print(f"Maximum Value: {numbersTree.maxValue()}")
