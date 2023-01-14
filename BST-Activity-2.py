@@ -104,3 +104,25 @@ class binarySearchTreeNode:
         if self.right is None:
             return self.data # returns the root node if the right subtree is empty
         return self.right.findMaxValue()
+
+    # function that deletes a node
+    def deleteValue(self, value):
+        if value < self.data: # visits left subtree
+            if self.left:
+                self.left = self.left.deleteValue(value)
+        elif value > self.data: # visits right subtree
+            if self.right:
+                self.right = self.right.deleteValue(value)
+        else:
+            if self.left is None and self.right is None: # checks if leaf nodes
+                return None
+            if self.left is None: # returns the only child node
+                return self.right
+            if self.right is None: # returns the right child node
+                return self.left
+
+            minValue = self.right.findMinValue() # finds the min value from the right node
+            self.data = minValue # copy the min value
+            self.right = self.right.deleteValue(minValue) # then remove the duplicate bode
+        
+        return self
