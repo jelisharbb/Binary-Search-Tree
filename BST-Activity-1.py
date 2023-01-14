@@ -137,10 +137,10 @@ if __name__ == '__main__':
 
     # print(f"\nFruits In Order Traversal: {fruitsTree.inOrderTraversal()}\n")
 
-    print(f"\nMinimum Value: {numbersTree.minValue()}")
+    print(f"\nNumbers: {numbers}")
+    print(f"Minimum Value: {numbersTree.minValue()}")
     print(f"Maximum Value: {numbersTree.maxValue()}")
     print(f"Summation of Values: {numbersTree.sumValue()}")
-    print(f"Numbers: {numbers}")
     print(f"Numbers In Order Traversal: {numbersTree.inOrderTraversal()}")
     print(f"Numbers Pre Order Traversal: {numbersTree.preOrderTraversal()}")
     print(f"Numbers Post Order Traversal: {numbersTree.postOrderTraversal()}\n")
