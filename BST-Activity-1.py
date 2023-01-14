@@ -131,6 +131,15 @@ class binarySearchTreeNode:
         
         return self
 
+    # function that deletes a node (alternate way)
+    def deleteValue(self, value):
+        if value < self.data: # visits left subtree
+            if self.left:
+                self.left = self.left.deleteValue(value)
+        elif value > self.data: # visits right subtree
+            if self.right:
+                self.right = self.right.deleteValue(value)
+
 # function that will create the binary tree
 def buildTree(elements):
     # first element in the set will be the root node
@@ -173,7 +182,7 @@ if __name__ == '__main__':
     # print(f"Numbers Post Order Traversal: {numbersTree.postOrderTraversal()}\n")
 
     # deleting node --------------------------------------
-    numbersTree.deleteValue(20)
+    numbersTree.deleteValue(9)
     print(f"\nAfter Deleting (In order): {numbersTree.inOrderTraversal()}")
     print(f"After Deleting (Pre order): {numbersTree.preOrderTraversal()}")
     print(f"After Deleting (Post order): {numbersTree.postOrderTraversal()}\n")
