@@ -83,4 +83,6 @@ if __name__ == '__main__':
 
     print("\nIs the fruit on the list?", fruitsTree.search("Melon"))
     print("Is the fruit on the list?", fruitsTree.search("Pears"))
-    print("Is the fruit on the list?", fruitsTree.search("Banana"), "\n")
+    print("Is the fruit on the list?", fruitsTree.search("Banana"))
+
+    print(f"\nFruits In Order Traversal: {fruitsTree.inOrderTraversal()}\n")
