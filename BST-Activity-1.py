@@ -14,14 +14,14 @@ class binarySearchTreeNode:
             if self.left:
                 self.left.addChild(data)
             else:
-                self.left.binarySearchTreeNode(data)
+                self.left = binarySearchTreeNode(data)
 
         else:
             # adds data in the right subtree
             if self.right:
                 self.right.addChild(data)
             else:
-                self.right.binarySearchTreeNode(data)
+                self.right = binarySearchTreeNode(data)
 
     def inOrderTraversal(self):
         # sorts elements in this order: left subtree + root node + right subtree
@@ -45,7 +45,7 @@ def buildTree(elements):
     # first element in the set will be the root node
     root = binarySearchTreeNode(elements[0])
 
-    for i in range(i, len(elements)):
+    for i in range(1, len(elements)):
         root.addChild(elements[i])
 
     return root
