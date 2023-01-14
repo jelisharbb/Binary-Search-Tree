@@ -40,6 +40,18 @@ class binarySearchTreeNode:
 
         return elements
 
+# function that will create the binary tree
+def buildTree(elements):
+    # first element in the set will be the root node
+    root = binarySearchTreeNode(elements[0])
+
+    for i in range(i, len(elements)):
+        root.addChild(elements[i])
+
+    return root
+
 # allows to execute code when the file runs as a script, but not when it's imported as a module
 if __name__ == '__main__':
     numbers = [15, 3, 9, 20, 12, 24, 27, 1]
+    numbersTree = buildTree(numbers)
+    print(numbersTree.inOrderTraversal())
