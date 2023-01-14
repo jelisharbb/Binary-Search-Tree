@@ -146,12 +146,12 @@ if __name__ == '__main__':
     numbers = [15, 3, 9, 20, 12, 24, 27, 1]
     numbersTree = buildTree(numbers)
 
-    # # testing
+    # # testing ---------------------------------------------------
     # print(f"\nNumbers In Order Traversal: {numbersTree.inOrderTraversal()}")
     # searchedValue = input("Enter the number you want to search: ")
     # print(f"Searched Value {searchedValue}: {numbersTree.search(int(searchedValue))}\n")
 
-    # # tested strings as elements
+    # # tested strings as elements --------------------------------
     # fruits = ["Mango", "Papaya", "Apple", "Pears", "Melon", "Watermelon", "Avocado"]
     # fruitsTree = buildTree(fruits)
 
@@ -161,6 +161,7 @@ if __name__ == '__main__':
 
     # print(f"\nFruits In Order Traversal: {fruitsTree.inOrderTraversal()}\n")
 
+    # # --------------------------------------------------
     # print(f"\nBuilding tree with these elements: {numbers}")
     # print(f"Minimum Value: {numbersTree.findMinValue()}")
     # print(f"Maximum Value: {numbersTree.findMaxValue()}")
@@ -171,7 +172,7 @@ if __name__ == '__main__':
     # print(f"Numbers Pre Order Traversal: {numbersTree.preOrderTraversal()}")
     # print(f"Numbers Post Order Traversal: {numbersTree.postOrderTraversal()}\n")
 
-    # deleting node
+    # deleting node --------------------------------------
     numbersTree.deleteValue(20)
     print(f"\nAfter Deleting (In order): {numbersTree.inOrderTraversal()}")
     print(f"After Deleting (Pre order): {numbersTree.preOrderTraversal()}")
