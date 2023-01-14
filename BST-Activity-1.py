@@ -44,11 +44,18 @@ class binarySearchTreeNode:
         # returns the root node
         if value == self.data:
             return
-            
+
         # value might be on the left subtree
         if value < self.data:
             if self.left:
                 self.left.search(value)
+            else:
+                False
+
+        # value might be on the right subtree
+        if value > self.data:
+            if self.right:
+                self.right.search(value)
             else:
                 False
 
