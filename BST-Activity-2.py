@@ -143,9 +143,16 @@ if __name__ == '__main__':
 
     print(f"\nBuilding tree with these elements: {fullName}")
 
+    # prints the letter in three different techniques
     print(f"\nLetters In Order Traversal: {fullNameTree.inOrderTraversal()}")
     print(f"Letters Pre Order Traversal: {fullNameTree.preOrderTraversal()}")
     print(f"Letters Post Order Traversal: {fullNameTree.postOrderTraversal()}")
 
+    # prints the minimum and maximum value in the tree
     print(f"\nMinimum Value: {fullNameTree.findMinValue()}")
     print(f"Maximum Value: {fullNameTree.findMaxValue()}")
+
+    # prints if the letter is on the list
+    print("\nIs the letter on the list?", fullNameTree.search("C"))
+    print("Is the letter on the list?", fullNameTree.search("J"))
+    print("Is the letter on the list?", fullNameTree.search("B"))
