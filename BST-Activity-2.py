@@ -142,3 +142,7 @@ if __name__ == '__main__':
     fullNameTree = buildTree(fullName)
 
     print(f"\nBuilding tree with these elements: {fullName}")
+
+    print(f"\nLetters In Order Traversal: {fullNameTree.inOrderTraversal()}")
+    print(f"Letters Pre Order Traversal: {fullNameTree.preOrderTraversal()}")
+    print(f"Letters Post Order Traversal: {fullNameTree.postOrderTraversal()}")
