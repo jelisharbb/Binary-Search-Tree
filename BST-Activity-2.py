@@ -41,3 +41,18 @@ class binarySearchTreeNode:
             elements += self.right.inOrderTraversal()
 
         return elements
+
+    def preOrderTraversal(self):
+    # sorts elements in this order: root node + left subtree + right subtree
+    # visit root node
+        elements = [self.data]
+
+        # visit left subtree
+        if self.left:
+            elements += self.left.preOrderTraversal()
+
+        # visit right subtree
+        if self.right:
+            elements += self.right.preOrderTraversal()
+
+        return elements
