@@ -126,3 +126,13 @@ class binarySearchTreeNode:
             self.right = self.right.deleteValue(minValue) # then remove the duplicate bode
         
         return self
+
+# function that will create the binary tree
+def buildTree(elements):
+    # first element in the set will be the root node
+    root = binarySearchTreeNode(elements[0])
+
+    for i in range(1, len(elements)):
+        root.addChild(elements[i])
+
+    return root
