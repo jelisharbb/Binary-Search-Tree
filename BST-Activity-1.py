@@ -43,21 +43,21 @@ class binarySearchTreeNode:
     def search(self, value):
         # returns the root node
         if value == self.data:
-            return
+            return True
 
         # value might be on the left subtree
         if value < self.data:
             if self.left:
-                self.left.search(value)
+                return self.left.search(value)
             else:
-                False
+                return False
 
         # value might be on the right subtree
         if value > self.data:
             if self.right:
-                self.right.search(value)
+                return self.right.search(value)
             else:
-                False
+                return False
 
 # function that will create the binary tree
 def buildTree(elements):
@@ -73,4 +73,6 @@ def buildTree(elements):
 if __name__ == '__main__':
     numbers = [15, 3, 9, 20, 12, 24, 27, 1]
     numbersTree = buildTree(numbers)
-    print(f"\nNumbers In Order Traversal: {numbersTree.inOrderTraversal()}\n")
+    print(f"\nNumbers In Order Traversal: {numbersTree.inOrderTraversal()}")
+    searchedValue = input("Enter the number you want to search: ")
+    print(f"Searched Value {searchedValue}: {numbersTree.search(15)}\n")
