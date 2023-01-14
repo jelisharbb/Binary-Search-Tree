@@ -75,4 +75,4 @@ if __name__ == '__main__':
     numbersTree = buildTree(numbers)
     print(f"\nNumbers In Order Traversal: {numbersTree.inOrderTraversal()}")
     searchedValue = input("Enter the number you want to search: ")
-    print(f"Searched Value {searchedValue}: {numbersTree.search(15)}\n")
+    print(f"Searched Value {searchedValue}: {numbersTree.search(int(searchedValue))}\n")
