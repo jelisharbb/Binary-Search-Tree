@@ -136,3 +136,7 @@ def buildTree(elements):
         root.addChild(elements[i])
 
     return root
+
+if __name__ == '__main__':
+    fullName = ["J", "E", "L", "I", "S", "H", "A", "R", "U", "T", "H", "B", "U", "G", "N", "O", "N"]
+    fullNameTree = buildTree(fullName)
