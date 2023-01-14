@@ -146,3 +146,6 @@ if __name__ == '__main__':
     print(f"\nLetters In Order Traversal: {fullNameTree.inOrderTraversal()}")
     print(f"Letters Pre Order Traversal: {fullNameTree.preOrderTraversal()}")
     print(f"Letters Post Order Traversal: {fullNameTree.postOrderTraversal()}")
+
+    print(f"\nMinimum Value: {fullNameTree.findMinValue()}")
+    print(f"Maximum Value: {fullNameTree.findMaxValue()}")
