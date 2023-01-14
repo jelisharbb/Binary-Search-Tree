@@ -24,3 +24,20 @@ class binarySearchTreeNode:
                 self.right.addChild(data)
             else:
                 self.right = binarySearchTreeNode(data)
+
+    def inOrderTraversal(self):
+        # sorts elements in this order: left subtree + root node + right subtree
+        elements = []
+
+        # visit left subtree
+        if self.left:
+            elements += self.left.inOrderTraversal()
+
+        # visit root node
+        elements.append(self.data)
+
+        # visit right subtree
+        if self.right:
+            elements += self.right.inOrderTraversal()
+
+        return elements
