@@ -39,3 +39,7 @@ class binarySearchTreeNode:
             elements += self.right.inOrderTraversal()
 
         return elements
+
+# allows to execute code when the file runs as a script, but not when it's imported as a module
+if __name__ == '__main__':
+    numbers = [15, 3, 9, 20, 12, 24, 27, 1]
