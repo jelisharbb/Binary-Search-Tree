@@ -59,6 +59,12 @@ class binarySearchTreeNode:
             else:
                 return False
 
+    # function that finds the leftmost node in the tree
+    def minValue(self):
+        if self.left is None:
+            return self.data
+        return self.left.minValue()
+
 # function that will create the binary tree
 def buildTree(elements):
     # first element in the set will be the root node
@@ -71,18 +77,20 @@ def buildTree(elements):
 
 # allows to execute code when the file runs as a script, but not when it's imported as a module
 if __name__ == '__main__':
-    # numbers = [15, 3, 9, 20, 12, 24, 27, 1]
-    # numbersTree = buildTree(numbers)
+    numbers = [15, 3, 9, 20, 12, 24, 27, 1]
+    numbersTree = buildTree(numbers)
 
-    # print(f"\nNumbers In Order Traversal: {numbersTree.inOrderTraversal()}")
+    print(f"\nNumbers In Order Traversal: {numbersTree.inOrderTraversal()}")
     # searchedValue = input("Enter the number you want to search: ")
     # print(f"Searched Value {searchedValue}: {numbersTree.search(int(searchedValue))}\n")
 
-    fruits = ["Mango", "Papaya", "Apple", "Pears", "Melon", "Watermelon", "Avocado"]
-    fruitsTree = buildTree(fruits)
+    # fruits = ["Mango", "Papaya", "Apple", "Pears", "Melon", "Watermelon", "Avocado"]
+    # fruitsTree = buildTree(fruits)
 
-    print("\nIs the fruit on the list?", fruitsTree.search("Melon"))
-    print("Is the fruit on the list?", fruitsTree.search("Pears"))
-    print("Is the fruit on the list?", fruitsTree.search("Banana"))
+    # print("\nIs the fruit on the list?", fruitsTree.search("Melon"))
+    # print("Is the fruit on the list?", fruitsTree.search("Pears"))
+    # print("Is the fruit on the list?", fruitsTree.search("Banana"))
 
-    print(f"\nFruits In Order Traversal: {fruitsTree.inOrderTraversal()}\n")
+    # print(f"\nFruits In Order Traversal: {fruitsTree.inOrderTraversal()}\n")
+
+    print(f"\nMinimum Value: {numbersTree.minValue()}")
