@@ -15,3 +15,10 @@ class binarySearchTreeNode:
                 self.left.addChild(data)
             else:
                 self.left.binarySearchTreeNode(data)
+
+        else:
+            # adds data in the right subtree
+            if self.right:
+                self.right.addChild(data)
+            else:
+                self.right.binarySearchTreeNode(data)
