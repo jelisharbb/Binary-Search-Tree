@@ -40,6 +40,21 @@ class binarySearchTreeNode:
 
         return elements
 
+    def preOrderTraversal(self):
+        # sorts elements in this order: root node + left subtree + right subtree
+        # visit root node
+        elements = [self.data]
+
+        # visit left subtree
+        if self.left:
+            elements += self.left.preOrderTraversal()
+
+        # visit right subtree
+        if self.right:
+            elements += self.right.preOrderTraversal()
+
+        return elements
+
     def search(self, value):
         # returns the root node
         if value == self.data:
@@ -75,7 +90,6 @@ class binarySearchTreeNode:
     def sumValue(self):
         leftSum = self.left.sumValue() if self.left else 0
         rightSum = self.right.sumValue() if self.right else 0
-
         return leftSum + self.data + rightSum
 
 # function that will create the binary tree
@@ -93,7 +107,7 @@ if __name__ == '__main__':
     numbers = [15, 3, 9, 20, 12, 24, 27, 1]
     numbersTree = buildTree(numbers)
 
-    print(f"\nNumbers In Order Traversal: {numbersTree.inOrderTraversal()}")
+    # print(f"\nNumbers In Order Traversal: {numbersTree.inOrderTraversal()}")
     # searchedValue = input("Enter the number you want to search: ")
     # print(f"Searched Value {searchedValue}: {numbersTree.search(int(searchedValue))}\n")
 
@@ -109,3 +123,6 @@ if __name__ == '__main__':
     print(f"\nMinimum Value: {numbersTree.minValue()}")
     print(f"Maximum Value: {numbersTree.maxValue()}")
     print(f"Summation of Values: {numbersTree.sumValue()}")
+    print(f"Numbers: {numbers}")
+    print(f"Numbers In Order Traversal: {numbersTree.inOrderTraversal()}")
+    print(f"Numbers Pre Order Traversal: {numbersTree.preOrderTraversal()}")
