@@ -55,6 +55,23 @@ class binarySearchTreeNode:
 
         return elements
 
+    def postOrderTraversal(self):
+        # sorts elements in this order: left subtree + right subtree + root node
+        elements = []
+
+        # visit left subtree
+        if self.left:
+            elements += self.left.postOrderTraversal()
+
+        # visit right subtree
+        if self.right:
+            elements += self.right.postOrderTraversal()
+
+        # visit root node
+        elements.append(self.data)
+
+        return elements
+
     def search(self, value):
         # returns the root node
         if value == self.data:
@@ -126,3 +143,4 @@ if __name__ == '__main__':
     print(f"Numbers: {numbers}")
     print(f"Numbers In Order Traversal: {numbersTree.inOrderTraversal()}")
     print(f"Numbers Pre Order Traversal: {numbersTree.preOrderTraversal()}")
+    print(f"Numbers Post Order Traversal: {numbersTree.postOrderTraversal()}\n")
