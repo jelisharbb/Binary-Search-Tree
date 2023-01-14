@@ -98,3 +98,9 @@ class binarySearchTreeNode:
         if self.left is None:
             return self.data # returns the root node if the left subtree is empty
         return self.left.findMinValue()
+
+    # function that finds the rightmost (max) node in the tree
+    def findMaxValue(self):
+        if self.right is None:
+            return self.data # returns the root node if the right subtree is empty
+        return self.right.findMaxValue()
