@@ -6,4 +6,12 @@ class binarySearchTreeNode:
 
     def addChild(self, data):
         if data == self.data:
+            # returns the data if it already exists
             return
+
+        if data < self.data:
+            # adds data in the left subtree
+            if self.left:
+                self.left.addChild(data)
+            else:
+                self.left.binarySearchTreeNode(data)
