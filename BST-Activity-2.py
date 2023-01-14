@@ -56,3 +56,39 @@ class binarySearchTreeNode:
             elements += self.right.preOrderTraversal()
 
         return elements
+
+    def postOrderTraversal(self):
+        # sorts elements in this order: left subtree + right subtree + root node
+        elements = []
+
+        # visit left subtree
+        if self.left:
+            elements += self.left.postOrderTraversal()
+
+        # visit right subtree
+        if self.right:
+            elements += self.right.postOrderTraversal()
+
+        # visit root node
+        elements.append(self.data)
+
+        return elements
+
+    def search(self, value):
+        # returns the root node
+        if value == self.data:
+            return True
+
+        # value might be on the left subtree
+        if value < self.data:
+            if self.left:
+                return self.left.search(value)
+            else:
+                return False
+
+        # value might be on the right subtree
+        if value > self.data:
+            if self.right:
+                return self.right.search(value)
+            else:
+                return False
