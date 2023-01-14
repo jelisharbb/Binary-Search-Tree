@@ -109,6 +109,15 @@ class binarySearchTreeNode:
         rightSum = self.right.sumValue() if self.right else 0
         return leftSum + self.data + rightSum
 
+    # function that deletes a node
+    def deleteValue(self, value):
+        if value < self.data: # visits left subtree
+            if self.left:
+                self.left.deleteValue(value)
+        elif value > self.data: # visits right subtree
+            if self.right:
+                self.right.deleteValue(value)
+
 # function that will create the binary tree
 def buildTree(elements):
     # first element in the set will be the root node
@@ -124,10 +133,12 @@ if __name__ == '__main__':
     numbers = [15, 3, 9, 20, 12, 24, 27, 1]
     numbersTree = buildTree(numbers)
 
+    # # testing
     # print(f"\nNumbers In Order Traversal: {numbersTree.inOrderTraversal()}")
     # searchedValue = input("Enter the number you want to search: ")
     # print(f"Searched Value {searchedValue}: {numbersTree.search(int(searchedValue))}\n")
 
+    # # tested strings as elements
     # fruits = ["Mango", "Papaya", "Apple", "Pears", "Melon", "Watermelon", "Avocado"]
     # fruitsTree = buildTree(fruits)
 
