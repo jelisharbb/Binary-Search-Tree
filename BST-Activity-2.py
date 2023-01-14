@@ -92,3 +92,9 @@ class binarySearchTreeNode:
                 return self.right.search(value)
             else:
                 return False
+
+    # function that finds the leftmost (min) node in the tree
+    def findMinValue(self):
+        if self.left is None:
+            return self.data # returns the root node if the left subtree is empty
+        return self.left.findMinValue()
