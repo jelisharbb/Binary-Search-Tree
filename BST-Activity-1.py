@@ -71,6 +71,13 @@ class binarySearchTreeNode:
             return self.data # returns the root node if the right subtree is empty
         return self.right.maxValue()
 
+    # function that calculates the sum of all values in the tree
+    def sumValue(self):
+        leftSum = self.left.sumValue() if self.left else 0
+        rightSum = self.right.sumValue() if self.right else 0
+
+        return leftSum + self.data + rightSum
+
 # function that will create the binary tree
 def buildTree(elements):
     # first element in the set will be the root node
@@ -101,3 +108,4 @@ if __name__ == '__main__':
 
     print(f"\nMinimum Value: {numbersTree.minValue()}")
     print(f"Maximum Value: {numbersTree.maxValue()}")
+    print(f"Summation of Values: {numbersTree.sumValue()}")
